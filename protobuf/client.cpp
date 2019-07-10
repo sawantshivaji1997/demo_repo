@@ -61,6 +61,7 @@ int main()
         return -1;
     }
     send(sock,msg.c_str(),strlen(msg.c_str()),0);
-
+    valread=read(sock,buffer,1024);
+    cout<<valread<<" "<<buffer<<endl;
     return 0;
 }

@@ -5,6 +5,7 @@
 #include<stdlib.h>
 #include<netinet/in.h>
 #include<string.h>
+#include"addressbook.pb.h"
 #define PORT 8080
 using namespace std;
 int main()
@@ -59,9 +60,17 @@ int main()
     {
         printf("Connection accepted\n");
     }
+    tutorial::AddressBook address_book;
     valread=read(new_socket,buffer,1024);
     printf("%s\n",buffer);
-
+    string str(buffer);
+    address_book.ParseFromString(str);
+    cout<<address_book.people_size()<<endl;
+    const tutorial::Person& person=address_book.people(int(0));
+    cout<<person.name()<<endl;
+    cout<<person.email()<<endl;
+    string count="Letter count: "+to_string(str.length());
+    send(new_socket,count.c_str(),strlen(count.c_str()),0);
 
     return 0;
 }
