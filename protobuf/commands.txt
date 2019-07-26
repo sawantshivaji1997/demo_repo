@@ -1,2 +1,2 @@
-c++ read.cpp addressbook.pb.cc `pkg-config --cflags --libs protobuf`
-c++ write.cpp addressbook.pb.cc `pkg-config --cflags --libs protobuf`
+c++ read.cpp addressbook.pb.cc `pkg-config --cflags --libs protobuf` -o read
+c++ write.cpp addressbook.pb.cc `pkg-config --cflags --libs protobuf` -o write
