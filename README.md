@@ -15,7 +15,9 @@
     - Compile with ```protoc --cpp_out=./ ./protocfilename.protoc```
     - Write the main code and add the generated header file from compilation of protoc file in the main code.
     - Compile and run the main code with following commands
-      - ``` c++ -std=c++11 mainfile.cpp protocfilename.pb.cc `pkg-config --cflags --libs protobuf` -o mainfile```
+      - ```sh 
+           c++ -std=c++11 mainfile.cpp protocfilename.pb.cc `pkg-config --cflags --libs protobuf` -o mainfile
+        ```
       - ``` ./mainfile filenametowrite ```
       
 ## Virtualization
